@@ -18,9 +18,19 @@
 
 import webapp2
 from cuwg.root import RootHandler
+from cuwg.authentication.password import PasswordHandler
+# from cuwg.transaction import TransactionHandler
+# from cuwg.xss import XSSHandler
 
 
 # Setup the WSGI server
 app = webapp2.WSGIApplication([
-    ('/', RootHandler),
+    webapp2.Route('/', RootHandler, 'index'),
+    webapp2.Route(
+        '/authentication/password',
+        PasswordHandler,
+        'password'
+    ),
+    # webapp2.Route('/transaction', TransactionHandler, 'transaction'),
+    # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)
