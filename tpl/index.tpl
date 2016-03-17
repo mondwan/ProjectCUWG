@@ -24,7 +24,6 @@
                     Authentication, Transaction, Cross Site Scripting
                 </p>
 			</div>
-			<hr />
 
 			<div class="col-xs-4">
 			    <strong>Challenges: Authentication</strong>
