@@ -11,7 +11,10 @@
 				{% include 'breadcrumb.tpl' %}
                 <h1>Challenge: Password</h1>
 
-                <p>Testing</p>
+                <h3>Guideline</h3>
+                <p>abcd</p>
+
+                <h3>Working...</h3>
 			</div>
         </div>
       </div>
