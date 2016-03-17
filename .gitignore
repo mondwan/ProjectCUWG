@@ -44,3 +44,6 @@ nosetests.xml
 # Ignore vim files
 *.swp
 *.swo
+
+# Ignore env folder
+env/
