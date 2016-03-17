@@ -20,6 +20,10 @@
       </div>
 
       {% include 'commonJSLib.tpl' %}
+      <script
+        type="text/javascript"
+        src="/js/authentication/password.js">
+      </script>
     </body>
 </html>
 {% endautoescape %}
