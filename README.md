@@ -17,15 +17,9 @@ Development
         git clone https://github.com/mondwan/ProjectCUWG
         cd ProjectCUWG
 
-* Setup virtualenv (Optional)
+* Add this project into Google app engine
 
-        mkdir env
-        virtualenv env/
-        source env/bin/activate
-
-* Install dependencies
-
-        pip install -r requirements.txt
+* Web server will be hosted by the Google app engine
 
 * Start coding
 
