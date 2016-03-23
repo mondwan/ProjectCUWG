@@ -19,6 +19,8 @@
 import webapp2
 from cuwg.root import RootHandler
 from cuwg.authentication.password import PasswordHandler
+from cuwg.authentication.password import PasswordLogin
+from cuwg.authentication.password import SignUp
 # from cuwg.transaction import TransactionHandler
 # from cuwg.xss import XSSHandler
 
@@ -31,6 +33,16 @@ app = webapp2.WSGIApplication([
         PasswordHandler,
         'password'
     ),
+    webapp2.Route(
+        '/authentication/password/login',
+        PasswordLogin,
+        'passwordLogin'
+    ),
+    webapp2.Route(
+        '/authentication/password/signUp',
+        SignUp,
+        'signUp'
+    )
     # webapp2.Route('/transaction', TransactionHandler, 'transaction'),
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)
