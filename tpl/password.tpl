@@ -11,24 +11,63 @@
 				{% include 'breadcrumb.tpl' %}
                 <h1>Challenge: Password</h1>
 
-                <h3>Guideline</h3>
-                <p>Create account -> know the password requirement -> brute force</p>
-                <p>Try to hack Mary's account (user name: mary)</p>
+                <h3>Goal</h3>
+                <p>Try to login as Mary by guessing her credentials (user name: mary)</p>
 
-             
+                <h3>Guideline</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Checkout requirement by creating an account</li>
+                    <li class="list-group-item">Guess Mary's password by brute force</li>
+                </ul>
+
                 <div id="site">
                 {% if not isSignUp  %}
                     {% if isLogin  %}
                         <h3>Login</h3>
-                        <form id="loginF" action="/authentication/password/login" method="POST">
-                           <label for="name"> User Name </label>
-                           <input type="text" name="name" id="name" required/> <br>
-                           <label for="pw"> Password </label>
-                           <input type="text" name="pw" id="pw" required/> <br>
-                           <input type="submit" value="Login">
+                        <form
+                            id="loginF"
+                            action="/authentication/password/login"
+                            method="POST"
+                            class="form-horizontal">
+                            <div class="form-group">
+                                <label
+                                    for="name"
+                                    class="col-xs-2 control-label">User Name</label>
+                                <div class="col-xs-10">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        class="form-control"
+                                        id="name"
+                                        placeholder="Username"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label
+                                    for="pw"
+                                    class="col-xs-2 control-label">Password</label>
+                                <div class="col-xs-10">
+                                    <input
+                                        type="password"
+                                        name="pw"
+                                        class="form-control"
+                                        id="pw"
+                                        placeholder="Password"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-offset-2 col-xs-10">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-default">Sign in</button>
+                                    <a
+                                        href="/authentication/password/signUp"
+                                        class="btn btn-success">Sign up</a>
+                                </div>
+                            </div>
                         </form>
-                        <a href="/authentication/password/signUp">Sign Up</a>    
-                        
                         
                         {% if isStarted  %}
                             {% if not isSucceeded  %}
