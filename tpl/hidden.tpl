@@ -9,15 +9,17 @@
         <div class="row">
             <div class="col-xs-12">
 				{% include 'breadcrumb.tpl' %}
-                <h1>Challenge: Password - Brute Force</h1>
+                <h1>Challenge: Password - Unecrypted password</h1>
 
                 <h3>Goal</h3>
-                <p>Try to login as Mary by guessing her credentials (user name: mary)</p>
+                <p>This site stores user name and password in unencrypted text file. It will load the unecrypted text file and compare the user's input while user login.</p>
+                <p>Try to login as Mary (user name: mary)</p>
 
                 <h3>Guideline</h3>
                 <ul class="list-group">
-                    <li class="list-group-item">Checkout requirement by creating an account</li>
-                    <li class="list-group-item">Guess Mary's password by brute force</li>
+                    <li class="list-group-item">Look into html source code</li>
+                    <li class="list-group-item">Find the hidden field</li>
+                    <li class="list-group-item">Try to access the unencrypted password file</li>
                 </ul>
 
                 <div id="site">
@@ -26,9 +28,12 @@
                         <h3>Login</h3>
                         <form
                             id="loginF"
-                            action="/authentication/password/login"
+                            action="/authentication/hidden/login"
                             method="POST"
                             class="form-horizontal">
+                            
+                            <input type="hidden" name="file" value="passwordFile">
+                            
                             <div class="form-group">
                                 <label
                                     for="name"
@@ -62,9 +67,6 @@
                                     <button
                                         type="submit"
                                         class="btn btn-default">Sign in</button>
-                                    <a
-                                        href="/authentication/password/signUp"
-                                        class="btn btn-success">Sign up</a>
                                 </div>
                             </div>
                         </form>

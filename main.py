@@ -21,6 +21,9 @@ from cuwg.root import RootHandler
 from cuwg.authentication.password import PasswordHandler
 from cuwg.authentication.password import PasswordLogin
 from cuwg.authentication.password import SignUp
+from cuwg.authentication.hidden import HiddenHandler
+from cuwg.authentication.hidden import PasswordFileHandler
+from cuwg.authentication.hidden import PasswordLogin
 # from cuwg.transaction import TransactionHandler
 # from cuwg.xss import XSSHandler
 
@@ -42,7 +45,22 @@ app = webapp2.WSGIApplication([
         '/authentication/password/signUp',
         SignUp,
         'signUp'
-    )
+    ),
+    webapp2.Route(
+        '/authentication/hidden',
+        HiddenHandler,
+        'hidden'
+    ),
+    webapp2.Route(
+        '/authentication/hidden/passwordFile',
+        PasswordFileHandler,
+        'passwordFile'
+    ),
+    webapp2.Route(
+        '/authentication/hidden/login',
+        PasswordLogin,
+        'passwordLogin'
+    ),
     # webapp2.Route('/transaction', TransactionHandler, 'transaction'),
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)
