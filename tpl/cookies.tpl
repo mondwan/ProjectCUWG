@@ -16,8 +16,8 @@
 
                 <h3>Guideline</h3>
                 <ul class="list-group">
-                    <li class="list-group-item">Login with your account and find out your session id</li>
-                    <li class="list-group-item">Try to imitate other ser by chaning the session id</li>
+                    <li class="list-group-item">Login with your account and find out your session id from somewhere </li>
+                    <li class="list-group-item">Try to imitate other user by chaning the session id</li>
                 </ul>
 
                 <div id="site">
@@ -62,9 +62,7 @@
                                     <button
                                         type="submit"
                                         class="btn btn-default">Sign in</button>
-                                    <a
-                                        href="/authentication/password/signUp"
-                                        class="btn btn-success">Sign up</a>
+
                                 </div>
                             </div>
                         </form>
