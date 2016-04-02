@@ -64,7 +64,7 @@ app = webapp2.WSGIApplication([
     ),
     webapp2.Route(
         '/transaction/cookies',
-        TranscationHandler,
+        TransactionHandler,
         'cookies'
     ),
     # webapp2.Route('/transaction', TransactionHandler, 'transaction'),

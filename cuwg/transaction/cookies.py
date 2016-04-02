@@ -11,7 +11,7 @@ import os
 import constants
 
 
-class TranscationHandler(webapp2.RequestHandler):
+class TransactionHandler(webapp2.RequestHandler):
     """Handler for /transaction/cookies
     """
     def get(self):
