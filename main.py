@@ -24,6 +24,7 @@ from cuwg.authentication.password import SignUp
 from cuwg.authentication.hidden import HiddenHandler
 from cuwg.authentication.hidden import PasswordFileHandler
 from cuwg.authentication.hidden import PasswordLogin
+from cuwg.transaction.cookies import TransactionHandler
 # from cuwg.transaction import TransactionHandler
 # from cuwg.xss import XSSHandler
 
