@@ -26,7 +26,7 @@
                         <h3>Login</h3>
                         <form
                             id="loginF"
-                            action="/transaction/cookies/sid%2019900615"
+                            action="/transaction/cookies/sid=2019900615"
                             method="POST"
                             class="form-horizontal">
                             <div class="form-group">
