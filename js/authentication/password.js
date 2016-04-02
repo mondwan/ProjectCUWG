@@ -1,5 +1,4 @@
 'use strict';
-
 function isNumber (n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
@@ -75,6 +74,36 @@ function validateForm() {
          result = false;
     }
     
+    // check email
+    var emailIn = $('input[name=email]').val();
+    console.log(emailIn);
+    if(emailIn)
+    {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(emailIn))
+      {
+         //valid email address
+         console.log("valid email address");
+         $('#email').css('background-color','');
+      }
+      else
+      {
+        //invalid email address
+        console.log("Email address is invalid");
+        $('#email').css('background-color', 'red');
+        $('#email').attr("placeholder", "Email address is invalid").val("").focus().blur();
+        result = false;
+      }       
+      
+    }
+    else
+    {
+      $('#email').css('background-color', 'red');
+      $('#email').attr("placeholder", "Email cannot be empty").val("").focus().blur();
+      result = false;
+
+    }
+    
     if(result)
     {
         alert("Registered! Please Login");
@@ -85,6 +114,8 @@ function validateForm() {
 }
 
 $(document).ready(function () {
-    // Coding here....
+
+
+
 
 });
