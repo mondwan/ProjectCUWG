@@ -17,7 +17,7 @@ class TransactionHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write(
             template.render(
-                os.path.join(constants.TPL_DIR, 'password.tpl'),
+                os.path.join(constants.TPL_DIR, 'cookies.tpl'),
                 {
                     'breadcrumb': [{
                         'name': 'Home',
@@ -28,7 +28,7 @@ class TransactionHandler(webapp2.RequestHandler):
                         'href': '/transaction',
                         'active': False,
                     }, {
-                        'name': 'Password',
+                        'name': 'Cookies',
                         'href': '/transaction/cookies',
                         'active': True,
                     }],
