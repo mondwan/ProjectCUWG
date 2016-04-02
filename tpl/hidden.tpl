@@ -32,7 +32,7 @@
                             method="POST"
                             class="form-horizontal">
                             
-                            <input type="hidden" name="file" value="passwordFile">
+                            <input type="hidden" name="file" value="hidden/passwordFile">
                             
                             <div class="form-group">
                                 <label
