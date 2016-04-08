@@ -19,7 +19,6 @@
 import webapp2
 from cuwg.root import RootHandler
 from cuwg.authentication.password import PasswordHandler
-from cuwg.authentication.password import PasswordLogin
 from cuwg.authentication.password import SignUp
 from cuwg.authentication.hidden import HiddenHandler
 from cuwg.authentication.hidden import PasswordFileHandler
@@ -78,8 +77,7 @@ app = webapp2.WSGIApplication([
         '/transaction/cookies/sid=2019900617',
         CookiesCrack,
         'cookiesCrack'
-    ),   
-    
+    ),
     # webapp2.Route('/transaction', TransactionHandler, 'transaction'),
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)
