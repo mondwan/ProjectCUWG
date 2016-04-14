@@ -29,10 +29,8 @@
 			    <strong>Challenges: Authentication</strong>
 				<div class="list-group">
                     <a href="/authentication/password" class="list-group-item">Password - Brute Force</a>
-                    <a href="/authentication/hidden" class="list-group-item">Password - Unencrypted password</a>
-                    <a href="#" class="list-group-item">Topic 3</a>
-                    <a href="#" class="list-group-item">Topic 4</a>
-                    <a href="#" class="list-group-item">Topic 5</a>
+                    <a href="/authentication/hiddenPassword" class="list-group-item">Password - Hidden Password</a>
+                    <a href="/authentication/rainbowTable" class="list-group-item">Password - Rainbow Table</a>
 				</div>
             </div>
 			<div class="col-xs-4">

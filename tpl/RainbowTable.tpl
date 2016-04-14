@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xs-12">
 				{% include 'breadcrumb.tpl' %}
-                <h1>Challenge: Password - Unecrypted password</h1>
+                <h1>Challenge: Password - Rainbow Table</h1>
 
                 <h3>Goal</h3>
                 <p>This site stores user name and password in unencrypted text file. It will load the unecrypted text file and compare the user's input while user login.</p>
@@ -31,9 +31,9 @@
                             action="/authentication/hidden/login"
                             method="POST"
                             class="form-horizontal">
-                            
+
                             <input type="hidden" name="file" value="hidden/passwordFile">
-                            
+
                             <div class="form-group">
                                 <label
                                     for="name"
@@ -70,20 +70,19 @@
                                 </div>
                             </div>
                         </form>
-                        
+
                         {% if isStarted  %}
                             {% if not isSucceeded  %}
                             <b>Login Fail, Please try again</b>
                             {% endif %}
                         {% endif %}
                     {% endif %}
-                    
                     {% if isSucceeded  %}
                             <b>Success!</b>
                             <p>Common practice</p>
                     {% endif %}
                 {% endif %}
-                
+
                 {% if isSignUp  %}
                     <h3>Sign Up</h3>
                     <form id="signUpF" onsubmit="return validateForm();">
@@ -96,7 +95,7 @@
                            <input type="button" value="Sign Up" onclick="validateForm()">
                     </form>
                 {% endif %}
-                
+
                 </div>
 			</div>
         </div>

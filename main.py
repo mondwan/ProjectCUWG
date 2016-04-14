@@ -20,9 +20,9 @@ import webapp2
 from cuwg.root import RootHandler
 from cuwg.authentication.password import PasswordHandler
 from cuwg.authentication.password import SignUp
-from cuwg.authentication.hidden import HiddenHandler
-from cuwg.authentication.hidden import PasswordFileHandler
-from cuwg.authentication.hidden import PasswordLogin
+from cuwg.authentication.rainbowTable import RainbowTableHandler
+from cuwg.authentication.rainbowTable import PasswordFileHandler
+from cuwg.authentication.rainbowTable import PasswordLogin
 from cuwg.transaction.cookies import TransactionHandler
 from cuwg.transaction.cookies import CookiesSignin
 from cuwg.transaction.cookies import CookiesCrack
@@ -49,17 +49,17 @@ app = webapp2.WSGIApplication([
         'signUp'
     ),
     webapp2.Route(
-        '/authentication/hidden',
-        HiddenHandler,
-        'hidden'
+        '/authentication/rainbowTable',
+        RainbowTableHandler,
+        'rainbowTable'
     ),
     webapp2.Route(
-        '/authentication/hidden/passwordFile',
+        '/authentication/rainbowTable/passwordFile',
         PasswordFileHandler,
         'passwordFile'
     ),
     webapp2.Route(
-        '/authentication/hidden/login',
+        '/authentication/rainbowTable/login',
         PasswordLogin,
         'passwordLogin'
     ),
