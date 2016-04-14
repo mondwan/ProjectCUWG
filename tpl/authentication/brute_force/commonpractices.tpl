@@ -13,6 +13,10 @@
                 harder for guessing a password.
             </li>
             <li class="list-group-item">
+                Disable the account after several trial errors to protect the
+                users
+            </li>
+            <li class="list-group-item">
                 You can learn more for reading recommendation from
                 <a
                 href="https://www.owasp.org/index.php/Password_length_%26_complexity"
