@@ -9,7 +9,9 @@
                 <div class="col-xs-12">
                     {% include 'breadcrumb.tpl' %}
 
-                    {% include './authentication/brute_force/instruction.tpl' %}
+                    {% if not isShowStatus %}
+                        {% include './authentication/brute_force/instruction.tpl' %}
+                    {% endif %}
 
                     {% if not isSignUp %}
                         {% if isShowForm %}
@@ -18,8 +20,7 @@
 
                         {% if isShowStatus  %}
                             {% if isSucceeded  %}
-                                <b>Success!</b>
-                                <p>Common practice</p>
+                                {% include './authentication/brute_force/commonpractices.tpl' %}
                             {% else %}
                                 <b>Login Fail, Please try again</b>
                             {% endif %}
