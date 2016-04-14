@@ -37,8 +37,11 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-offset-2 col-xs-10">
+                   <a
+                       href="/authentication/password"
+                       class="btn btn-default">Back</a>
                    <input
-                    class="btn btn-default"
+                    class="btn btn-success"
                     type="button"
                     value="Sign Up"
                     onclick="validateForm()"/>
