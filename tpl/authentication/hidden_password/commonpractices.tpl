@@ -19,5 +19,6 @@
                 your password by simply sniffing packets easily as a result.
             </li>
         </ul>
+        <a href="/" class="btn btn-success">Back to home</a>
     </div>
 </div>

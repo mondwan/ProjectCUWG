@@ -23,5 +23,6 @@
                 >OWASP</a>
             </li>
         </ul>
+        <a href="/" class="btn btn-success">Back to home</a>
     </div>
 </div>
