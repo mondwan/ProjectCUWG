@@ -20,6 +20,7 @@ import webapp2
 from cuwg.root import RootHandler
 from cuwg.authentication.password import PasswordHandler
 from cuwg.authentication.password import SignUp
+from cuwg.authentication.hiddenPassword import HiddenPasswordHandler
 from cuwg.authentication.rainbowTable import RainbowTableHandler
 from cuwg.authentication.rainbowTable import PasswordFileHandler
 from cuwg.authentication.rainbowTable import PasswordLogin
@@ -47,6 +48,11 @@ app = webapp2.WSGIApplication([
         '/authentication/password/signUp',
         SignUp,
         'signUp'
+    ),
+    webapp2.Route(
+        '/authentication/hiddenPassword',
+        HiddenPasswordHandler,
+        'hiddenPassword'
     ),
     webapp2.Route(
         '/authentication/rainbowTable',
