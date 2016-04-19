@@ -27,6 +27,8 @@ from cuwg.authentication.rainbowTable import PasswordLogin
 from cuwg.transaction.cookies import TransactionHandler
 from cuwg.transaction.cookies import CookiesSignin
 from cuwg.transaction.cookies import CookiesCrack
+from cuwg.transaction.sessionHijack import SessionHijackHandler
+from cuwg.transaction.sessionHijack import TransferFormHandler
 # from cuwg.transaction import TransactionHandler
 # from cuwg.xss import XSSHandler
 
@@ -84,6 +86,15 @@ app = webapp2.WSGIApplication([
         CookiesCrack,
         'cookiesCrack'
     ),
-    # webapp2.Route('/transaction', TransactionHandler, 'transaction'),
+    webapp2.Route(
+        '/transaction/sessionHijack',
+        SessionHijackHandler,
+        'sessionHijack'
+    ),
+    webapp2.Route(
+        '/transaction/sessionHijack/transferForm',
+        TransferFormHandler,
+        'transferForm'
+    ),
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)

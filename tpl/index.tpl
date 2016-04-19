@@ -37,10 +37,8 @@
 			    <strong>Challenges: Transaction</strong>
 				<div class="list-group">
                     <a href="/transaction/cookies" class="list-group-item">Cookies - Insecure Session Id</a>
-                    <a href="#" class="list-group-item">Topic 2</a>
+                    <a href="/transaction/sessionHijack" class="list-group-item">Session - Session Hijack</a>
                     <a href="#" class="list-group-item">Topic 3</a>
-                    <a href="#" class="list-group-item">Topic 4</a>
-				<a href="#" class="list-group-item">Topic 5</a>
 				</div>
             </div>
 			<div class="col-xs-4">
@@ -49,8 +47,6 @@
                     <a href="#" class="list-group-item">Topic 1</a>
                     <a href="#" class="list-group-item">Topic 2</a>
                     <a href="#" class="list-group-item">Topic 3</a>
-                    <a href="#" class="list-group-item">Topic 4</a>
-                    <a href="#" class="list-group-item">Topic 5</a>
                 </div>
             </div>
         </div>
