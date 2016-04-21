@@ -52,9 +52,13 @@
                     <li class="list-group-item">
                         Brute force the session ID by typing follow command in
                         the brower's console.
-                        <code>document.cookie = "SID=mary:GUESS"</code>.
+                        <code>document.cookie = '"sid=mary:GUESS"'</code>.
                         Replace GUESS with digit from 1 to 10 and click
                         "Transfer money on behalf of Mary" button to verify.
+                    </li>
+                    <li class="list-group-item">
+                        Answer is
+                        <code>document.cookie = '"sid=mary:7"'</code>.
                     </li>
                 </ul>
             </div>
