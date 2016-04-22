@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <h1>Challenge: Password - Brute Force</h1>
+        <h1>Challenge: Password - Hidden password</h1>
 
         <h3>Goal</h3>
         <p>Try to login as Mary by guessing her credentials (user name: mary)</p>
