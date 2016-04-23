@@ -29,6 +29,9 @@ from cuwg.transaction.cookies import CookiesSignin
 from cuwg.transaction.cookies import CookiesCrack
 from cuwg.transaction.sessionHijack import SessionHijackHandler
 from cuwg.transaction.sessionHijack import TransferFormHandler
+from cuwg.xss.sanitization import SanitizationHandler
+from cuwg.xss.sanitization import ReviewFormHandler
+from cuwg.xss.sanitization import ResultVerifyHandler
 # from cuwg.transaction import TransactionHandler
 # from cuwg.xss import XSSHandler
 
@@ -96,5 +99,21 @@ app = webapp2.WSGIApplication([
         TransferFormHandler,
         'transferForm'
     ),
+    webapp2.Route(
+        '/xss/sanitization',
+        SanitizationHandler,
+        'sanitization'
+    ),
+    webapp2.Route(
+        '/xss/sanitization/reviewForm',
+        ReviewFormHandler,
+        'reviewForm'
+    ),
+    webapp2.Route(
+        '/xss/sanitization/cookies',
+        ResultVerifyHandler,
+        'xssCookies'
+    ),
+    
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)
