@@ -44,7 +44,7 @@
 			<div class="col-xs-4">
 			    <strong>Challenges: Cross site scripting</strong>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Topic 1</a>
+                    <a href="/xss/sanitization" class="list-group-item">XSS - Sanitizing Input</a>
                     <a href="#" class="list-group-item">Topic 2</a>
                     <a href="#" class="list-group-item">Topic 3</a>
                 </div>
