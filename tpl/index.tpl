@@ -38,7 +38,7 @@
 				<div class="list-group">
                     <a href="/transaction/cookies" class="list-group-item">Cookies - Insecure Session Id</a>
                     <a href="/transaction/sessionHijack" class="list-group-item">Session - Session Hijack</a>
-                    <a href="#" class="list-group-item">Topic 3</a>
+                    <a href="/transaction/httpAuthentication" class="list-group-item">Session - Http Authentication</a>
 				</div>
             </div>
 			<div class="col-xs-4">

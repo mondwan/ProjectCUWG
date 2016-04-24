@@ -27,6 +27,7 @@ from cuwg.authentication.rainbowTable import PasswordLogin
 from cuwg.transaction.cookies import TransactionHandler
 from cuwg.transaction.cookies import CookiesSignin
 from cuwg.transaction.cookies import CookiesCrack
+from cuwg.transaction.httpAuthentication import HttpAuthenticationHandler
 from cuwg.transaction.sessionHijack import SessionHijackHandler
 from cuwg.transaction.sessionHijack import TransferFormHandler
 from cuwg.xss.sanitization import SanitizationHandler
@@ -100,6 +101,11 @@ app = webapp2.WSGIApplication([
         'transferForm'
     ),
     webapp2.Route(
+        '/transaction/httpAuthentication',
+        HttpAuthenticationHandler,
+        'httpAuthentication'
+    ),
+    webapp2.Route(
         '/xss/sanitization',
         SanitizationHandler,
         'sanitization'
@@ -114,6 +120,5 @@ app = webapp2.WSGIApplication([
         ResultVerifyHandler,
         'xssCookies'
     ),
-    
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)
