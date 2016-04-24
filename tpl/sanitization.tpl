@@ -27,13 +27,15 @@
                         {% endif %}
                     {% endif %}
                     
-                    
+                    {% if userError %}
+                        <p class="text-warning"><b>
+                            Incorrect: Should leave comment as mary. Please try
+                            again.
+                        </b></p>
+                    {% endif %}
                 </div>
             </div>
         </div>
-        {% if userError %}
-            <p><b>Incorrect: Should leave comment as mary, please try again</b></p>
-        {% endif %}
         {% include 'commonJSLib.tpl' %}
         
         <script
