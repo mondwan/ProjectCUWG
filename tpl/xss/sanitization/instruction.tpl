@@ -40,7 +40,11 @@
                         Find the hidden field after login and change the value to "mary"
                     </li>
                     <li class="list-group-item">
-                        In the review textbox, type <a href="javascript:document.location='/xss/sanitization/cookies?'+document.cookie;">Click here to get discount!</a>
+                        In the review textbox, type <code>
+                            &lt;a
+                                href=&quot;javascript:document.location='/xss/sanitization/cookies?'+document.cookie;&quot;
+                            &gt;Click here to get discount!&lt;/a&gt;
+                        </code>
                     </li>
                     <li class="list-group-item">
                         Try and error until we get 7 and success. Therefore 7 is the
