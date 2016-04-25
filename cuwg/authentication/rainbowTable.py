@@ -1,7 +1,7 @@
 """
 - `File`: password.py
 
-- `Description`: Authentication challenge 1: Password
+- `Description`: Authentication challenge 3: rainbow table
 """
 
 

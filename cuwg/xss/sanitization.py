@@ -1,7 +1,7 @@
 """
 - `File`: sanitization.py
 
-- `Description`: xss challenge 2: Hijack a session
+- `Description`: xss challenge 1: How importatn to do sanitization
 """
 
 
