@@ -12,12 +12,11 @@
                     {% if isSucceeded %}
                             {% include './xss/sanitization/commonpractices.tpl' %}
                     {% else %}
-                        {% if sid %}
+                        {% include './xss/sanitization/instruction.tpl' %}
                         
+                        {% if sid %}
                             {% include './xss/sanitization/reviewForm.tpl' %}
-
-                        {% else %}
-                            {% include './xss/sanitization/instruction.tpl' %}
+                        {% else %}  
                             {% include './xss/sanitization/loginForm.tpl' %}
 
                             {% if passwordIncorrect %}

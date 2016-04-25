@@ -260,15 +260,16 @@
                                             <div class="stars starrr" data-rating="0"></div>
                                             <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
                                             <span class="glyphicon glyphicon-remove"></span>Cancel</a>
-                                            <button class="btn btn-success btn-lg" type="submit">Save</button>
-                                        </div>
-                                 
+                                            <button class="btn btn-success btn-lg" type="submit" name="action" value="save">Save</button>
+                                            
+                                        </div>             
                                 </div>
                             </div>
                         </div>        
                     </div>
                 </div>
             </div>
+            <button type="submit" name="action" value="logout" class="btn btn-default">Logout</button>
         </form>
     </div>
 </div>

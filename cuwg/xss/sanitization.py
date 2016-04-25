@@ -27,7 +27,7 @@ class ResultVerifyHandler(webapp2.RequestHandler):
         
         ctx = SanitizationHandler.getBreadcrumbContext()
         ctx['isSucceeded'] = True
-        if(user[0] == 'john'):
+        if(user[0] != 'mary'):
             ctx['isSucceeded'] = False
             ctx['userError'] = True
             self.response.write(
@@ -93,32 +93,37 @@ class ReviewFormHandler(webapp2.RequestHandler):
 
     def post(self):
         sid = self.request.cookies.get('sid')
-      #  action = self.request.POST['action']
+        action = self.request.POST['action']
         logging.info('sid=%s' % sid)
-        review = self.request.get('comment')
-        ctx = SanitizationHandler.getBreadcrumbContext()
-        ctx['sid'] = sid
-        ctx['review'] = review;
-        logging.info('review=%s' % review)
-        # Transfer on behalf of john
-        user = self.request.get('user')
-        ctx['owner'] = self.request.get('user')
-        self.response.set_cookie(
-                'user',
-                user,
-                max_age=60,
-                path='/xss/sanitization/reviewForm'
+        if action == 'logout':
+            # Delete cookie and back to /transaction/sessionHijack
+            self.deleteSID()
+            self.redirect('/xss/sanitization')
+        else:
+            review = self.request.get('comment')
+            ctx = SanitizationHandler.getBreadcrumbContext()
+            ctx['sid'] = sid
+            ctx['review'] = review;
+            logging.info('review=%s' % review)
+            # Transfer on behalf of john
+            user = self.request.get('user')
+            ctx['owner'] = self.request.get('user')
+            self.response.set_cookie(
+                    'user',
+                    user,
+                    max_age=60,
+                    path='/xss/sanitization/reviewForm'
+                )
+            self.response.headers['X-XSS-Protection'] = '0'
+            self.response.write(
+                template.render(
+                    os.path.join(
+                        constants.TPL_DIR,
+                        'sanitization.tpl'
+                    ),
+                    ctx
+                )
             )
-        self.response.headers['X-XSS-Protection'] = '0'
-        self.response.write(
-            template.render(
-                os.path.join(
-                    constants.TPL_DIR,
-                    'sanitization.tpl'
-                ),
-                ctx
-            )
-        )
 
 
 

@@ -4,23 +4,13 @@
         <p>Common practice</p>
         <ul class="list-group">
             <li class="list-group-item">
-                Password should be at least 8 characters long which makes
-                a password hard to guess or brute force.
+                Use Sanitization Library to filter HTML tags input. For example, OWASP AntiSamy for Java, HTMLPurifier for PHP. 
             </li>
             <li class="list-group-item">
-                Password should be forced to mixed with different characters
-                including letters, numbers, symbols etc. The more you mix, the
-                harder for guessing a password.
+                Server side should sanitize data before saving to database or sanitize data before using it.
             </li>
             <li class="list-group-item">
-                Disable the account after several trial errors to protect the
-                users
-            </li>
-            <li class="list-group-item">
-                You can learn more for reading recommendation from
-                <a
-                href="https://www.owasp.org/index.php/Password_length_%26_complexity"
-                >OWASP</a>
+                In order to protect the cookies, it should set as HttpOnly. So that it can only be read / write on the server side.
             </li>
         </ul>
         <a href="/" class="btn btn-success">Back to home</a>
