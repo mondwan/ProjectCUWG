@@ -87,7 +87,7 @@ class ReviewFormHandler(webapp2.RequestHandler):
             # Back to /xss/sanitization if there is no valid cookie
             # present
             self.deleteSID()
-            self.redirect('/xss/sanitization/reviewForm')
+            self.redirect('/xss/sanitization')
             
 
 
