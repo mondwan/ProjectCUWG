@@ -12,11 +12,8 @@
                 Either by sending a post request through AJAX or form submit
                 in POST is good enough.
             </li>
-            <li class="list-group-item">
-                If possible, do not transmit password in a plaintext format.
-                Try to encode them with SHA or MD5. If not possible, at least
-                make sure you are running in HTTPS protocol. No one can read
-                your password by simply sniffing packets easily as a result.
+            <li class="code-item">
+            <code>saltedhash(password) = hash(hash(password) + salt)</code>
             </li>
         </ul>
         <a href="/" class="btn btn-success">Back to home</a>

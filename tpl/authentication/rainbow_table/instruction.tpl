@@ -3,7 +3,7 @@
         <h1>Challenge: Password - Rainbow Table</h1>
 
         <h3>Goal</h3>
-       			<p>This site stores user name and password in unencrypted text file. It will load the unecrypted text file and compare the user's input while user login.</p>
+       			<p>This site stores user name and hashes of user password in unencrypted text file. With the provide Rainbow table, try to recover the plaintext password </p>
                 <p>Try to login as Mary (user name: mary)</p>
 
         <ul class="nav nav-tabs" role="tablist">
@@ -22,11 +22,17 @@
                         Look into html source code
                     </li>
                     <li class="list-group-item">
-                        Find the hidden field
+                        Find the hidden field and Try to access the unencrypted password file which contain user name and password hashes
                     </li>
                     <li class="list-group-item">
-                        Try to access the unencrypted password file with rainbow table
+                        Find out the Hash chain of corresponding hash under Mary with the pre-computed rainbow table proiveded.
                     </li>
+                    <li class="list-group-item">
+                        Try to log-in with your cracked plain text password
+                    </li>
+                    <li> <img src='./authentication/rainbow_table/test_rainbow.png'> </li>
+                    <h5>Reference : https://en.wikipedia.org/wiki/Rainbow_table</h5>
+                    <p hidden> For admin use: unencrypted text file is stored under /authentication/rainbowTable/passwordFile </p>
                 </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="solution">

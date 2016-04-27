@@ -38,9 +38,6 @@
                     <li class="list-group-item">
                         Try to guess other's session id by accessing the modified url and view other's information by imitating Peter ( sid=2019900617 in this task )
                     </li>
-                    <li class="list-group-item">
-                        When designing web application, it is important to make sure the session id is securely encypted 
-                    </li>
                 </ul>
             </div>
         </div>
@@ -48,6 +45,18 @@
                     {% if identity = "PETER"  %}
                       <h1> Peter </h1>
                       <h2> Confidential Information : YYY </h2>
+					  <h2 class="text-success">Success!</h2>
+        				<p>Common practice</p>
+        				<ul class="list-group">
+          				  <li class="list-group-item">
+							When designing web application, it is important to make sure the session id is securely transmitted.
+           				 </li>
+            			<li class="list-group-item">
+							Seperate the session and authentication parameter in-order to maintain the session at the same time to check login status using cookies which is protected by secured channel , For example:  HTTPS.
+           				 </li>
+       					 </ul>
+       					 
+        <a href="/" class="btn btn-success">Back to home</a>
                 {% endif %}
 
              <div id="site">

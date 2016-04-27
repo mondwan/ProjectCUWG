@@ -14,9 +14,8 @@ import constants
 class PasswordFileHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write(
-            '{user:mary, pw:"M@rY12"}, {user:sam, pw:"Passw0rd"}, {user:peter, pw: "123456"}'
+            '{user:mary, pw:"7c6a180b36896a0a8c02787eeafb0e4c"}, {user:sam, pw:"6cb75f652a9b52798eb6cf2201057c73"}, {user:peter, pw: "e10adc3949ba59abbe56e057f20f883e"}'
         )
-
 
 class PasswordLogin(webapp2.RequestHandler):
     def post(self):
@@ -60,29 +59,49 @@ class PasswordLogin(webapp2.RequestHandler):
 
 
 class RainbowTableHandler(webapp2.RequestHandler):
-    """Handler for /authentication/rainbowTable
-    """
+
+    def getBreadcrumbContext(self):
+        return {
+            'breadcrumb': [{
+                'name': 'Home',
+                'href': '/',
+                'active': False,
+            }, {
+                'name': 'Authentication',
+                'href': '/authentication',
+                'active': False,
+            }, {
+                'name': 'Hidden Password',
+                'href': '/authentication/rainbowTable',
+                'active': True,
+            }],
+        }
+        
     def get(self):
+        ctx = self.getBreadcrumbContext()
+        ctx['isSucceeded'] = False
         self.response.write(
             template.render(
                 os.path.join(constants.TPL_DIR, 'rainbowTable.tpl'),
-                {
-                    'breadcrumb': [{
-                        'name': 'Home',
-                        'href': '/',
-                        'active': False,
-                    }, {
-                        'name': 'Authentication',
-                        'href': '/authentication',
-                        'active': False,
-                    }, {
-                        'name': 'RainbowTable',
-                        'href': '/authentication/rainbowTable',
-                        'active': True,
-                    }],
-                    'isSignUp': False,
-                    'isLogin': True,
-                    'isStarted': False
-                }
+                ctx
+            )
+        )
+
+    def post(self):
+        name = self.request.get('name')
+        pw = self.request.get('pw')
+
+        if name == 'mary' and pw == 'helloworld':
+            isSucceeded = True
+        else:
+            isSucceeded = False
+
+        ctx = self.getBreadcrumbContext()
+        ctx['isSucceeded'] = isSucceeded
+
+        self.response.write(
+            template.render(
+                os.path.join(constants.TPL_DIR, 'rainbowTable.tpl'),
+                ctx
             )
         )
