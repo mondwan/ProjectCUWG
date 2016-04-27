@@ -45,7 +45,7 @@
 			    <strong>Challenges: Cross site scripting</strong>
                 <div class="list-group">
                     <a href="/xss/sanitization" class="list-group-item">XSS - Sanitizing Input</a>
-                    <a href="#" class="list-group-item">Topic 2</a>
+                    <a href="/xss/javascript" class="list-group-item">XSS - Client Side XSS</a>
                     <a href="#" class="list-group-item">Topic 3</a>
                 </div>
             </div>

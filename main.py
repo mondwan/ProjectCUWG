@@ -33,6 +33,10 @@ from cuwg.transaction.sessionHijack import TransferFormHandler
 from cuwg.xss.sanitization import SanitizationHandler
 from cuwg.xss.sanitization import ReviewFormHandler
 from cuwg.xss.sanitization import ResultVerifyHandler
+from cuwg.xss.javascript import JavascriptHandler
+from cuwg.xss.javascript import ProductHandler
+from cuwg.xss.javascript import PreorderHandler
+from cuwg.xss.javascript import UpdateStateHandler
 # from cuwg.transaction import TransactionHandler
 # from cuwg.xss import XSSHandler
 
@@ -119,6 +123,26 @@ app = webapp2.WSGIApplication([
         '/xss/sanitization/cookies',
         ResultVerifyHandler,
         'xssCookies'
+    ),
+    webapp2.Route(
+        '/xss/javascript',
+        JavascriptHandler,
+        'javascript'
+    ),
+    webapp2.Route(
+        '/xss/javascript/product',
+        ProductHandler,
+        'product'
+    ),
+    webapp2.Route(
+        '/xss/javascript/preorder',
+        PreorderHandler,
+        'preorder'
+    ),
+    webapp2.Route(
+        '/xss/javascript/updateState',
+        UpdateStateHandler,
+        'updateState'
     ),
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)
