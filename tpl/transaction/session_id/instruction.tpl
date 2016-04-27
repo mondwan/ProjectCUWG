@@ -1,14 +1,5 @@
-{% autoescape on %}
-<html>
-    <head>
-        {% include 'commonHeader.tpl' %}
-    </head>
-    <body>
-
-      <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-				{% include 'breadcrumb.tpl' %}
+<div class="row">
+    <div class="col-xs-12">
         <h1>Challenge: Cookies - Insecure Session Id</h1>
 
         <h3>Goal</h3>
@@ -44,29 +35,5 @@
                 </ul>
             </div>
         </div>
-             <div id="site">
-                    {% if identity = "PETER"  %}
-                      <h1> Peter </h1>
-                      <h2> Confidential Information : YYY </h2>
-                {% endif %}
-
-             <div id="site">
-                    {% if identity = "MARY"  %}
-                      <h1> Mary </h1>
-                      <h2> Confidential Information : XXX </h2>
-                {% endif %}
-                
-                </div>
-			</div>
     </div>
 </div>
-
-
-      {% include 'commonJSLib.tpl' %}
-      <script
-        type="text/javascript"
-        src="/js/authentication/password.js">
-      </script>
-    </body>
-</html>
-{% endautoescape %}
