@@ -4,7 +4,6 @@ $(document).ready(function () {
     var $form = $('#loginF');
     var $name = $('#name');
     var $pw = $('#pw');
-    var $ans = $('#ans');
     var $alert = $('#alert');
     var $hashfuncbtn = $('#hashfuncbtn');
     var hashfunc = document.getElementById("hashfunc");
@@ -18,26 +17,9 @@ $(document).ready(function () {
     var $redfuncbtn3 = $('#redfuncbtn3');
     var redfunc3 = document.getElementById("redfunc3");
     var $redfunc3_result = $('#redfunc3_result');    
-    
 
-    $form.on('submit', function (e) {
-        $alert.removeClass('hidden');
-        $alert.removeClass('alert-danger');
-        $alert.removeClass('alert-success');
 
-        if (
-            $name.val() !== 'mary' ||
-            $ans.val() !== $pw.val()
-        ) {
-            e.stopPropagation();
-            e.preventDefault();
-            $alert.addClass('alert-danger');
-            $alert.text('Password is not correct');
-        } else {
-            $alert.addClass('alert-success');
-            $alert.text('Password is correct');
-        }
-    });
+
 // RainbowTable hash function handling    
     $hashfuncbtn.click(function(){
     	if (hashfunc.value > 999999 || hashfunc.value<100000){

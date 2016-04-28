@@ -16,6 +16,12 @@
 
                         {% include './authentication/rainbow_table/loginForm.tpl' %}
                     {% endif %}
+                    
+                    {% if userError %}
+                        <p class="text-warning"><b>
+                            Password is incorrect!
+                        </b></p>
+                    {% endif %}
                 </div>
             </div>
         </div>

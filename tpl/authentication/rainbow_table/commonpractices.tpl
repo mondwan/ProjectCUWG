@@ -11,9 +11,8 @@
                 <code>saltedhash(password) = hash(hash(password) + salt)</code>
                 https://en.wikipedia.org/wiki/Salt_(cryptography)
             </li>
-            <li class="code-item">
+            <li class="list-group-item">
                 Alternative approach - Key Strengthening by extending the key with a random salt.
-
             </li>
         </ul>
         <a href="/" class="btn btn-success">Back to home</a>
