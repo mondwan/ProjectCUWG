@@ -13,6 +13,9 @@
             <li role="presentation">
                 <a href="#solution" aria-controls="solution" role="tab" data-toggle="tab">Solution</a>
             </li>
+            <li role="presentation">
+                <a href="#rainbowtable" aria-controls="rainbowtable" role="tab" data-toggle="tab">Rainbow Table</a>
+            </li>
         </ul>
 
         <div class="tab-content">
@@ -36,6 +39,21 @@
                 </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="solution">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Read the source code through browser's developer tool
+                    </li>
+                    <li class="list-group-item">
+                        Find out an hidden input field with password in
+                        plaintext format
+                    </li>
+                    <li class="list-group-item">
+                        After looking at the hidden value, you know the
+                        password is helloworld
+                    </li>
+                </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="rainbowtable">
                 <ul class="list-group">
                     <li class="list-group-item">
                         Read the source code through browser's developer tool

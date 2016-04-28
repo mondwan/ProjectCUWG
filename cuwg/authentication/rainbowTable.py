@@ -44,7 +44,7 @@ class PasswordLogin(webapp2.RequestHandler):
                         'href': '/authentication',
                         'active': False,
                     }, {
-                        'name': 'RainbowTable',
+                        'name': 'Rainbow Table',
                         'href': '/authentication/rainbowTable',
                         'active': True,
                     }],
@@ -71,7 +71,7 @@ class RainbowTableHandler(webapp2.RequestHandler):
                 'href': '/authentication',
                 'active': False,
             }, {
-                'name': 'Hidden Password',
+                'name': 'Rainbow Table',
                 'href': '/authentication/rainbowTable',
                 'active': True,
             }],
