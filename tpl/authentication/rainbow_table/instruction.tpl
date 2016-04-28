@@ -22,10 +22,13 @@
             <div role="tabpanel" class="tab-pane active" id="guideline">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        Try to pre-compute the rainbow table using the Simplilied Hash function and Reduction functions provided.
+                        Try to pre-compute the rainbow table using the Simplified Hash function and Reduction functions provided and store only the 1st and last columns.
                     </li>
                     <li class="list-group-item">
-                        Find the hidden field and Try to access the unencrypted Security Account MAnager (SAM) file which contain user name and password hashes.
+                        <code> False alarm ( collision with ordinary hash chain )is avoided by replacing the single reduction function with sequence of related reduction functions R(k).</code>
+                    </li>                    
+                    <li class="list-group-item">
+                        Find the hidden field and Try to access the unencrypted Security Account Manager (SAM) file which contain user name and password hashes.
                     </li>
                     <li class="list-group-item">
                         Find out the Hash chain of corresponding hash under Mary with the Rainblow table you have computed.
@@ -41,16 +44,26 @@
             <div role="tabpanel" class="tab-pane" id="solution">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        Read the source code through browser's developer tool
+                        As we know that the plaint text password is ranged from 100000 to 999999, we can pre-compute the hashes chains with the known Hash and reduction functions.
                     </li>
                     <li class="list-group-item">
-                        Find out an hidden input field with password in
-                        plaintext format
+                        Find out the hidden filed on HTML code and access the SAM file at /authentication/rainbowTable/passwordFile.
                     </li>
                     <li class="list-group-item">
-                        After looking at the hidden value, you know the
-                        password is helloworld
+                        To crake the password with rainbow table , step 1 : Starting from the hash ("282882") obtained from SAM file, one computes the last reduction used in the table and checks whether the password exits in the last column on your table.
                     </li>
+                    <li class="list-group-item">
+                        Step2 : If the test fail which means you cannot find a result from step 1 , try to compute a chain with the 2nd last reduction ( R2 ).
+                    </li>
+                    <li class="list-group-item">
+                    	Step3 : If the test is positive which means that you can find the corresponding reduced hashes at the end of the chain and in the table, the password is retrieved at the beginning of the chain that produces the last results.
+                    </li>
+                    <li class="list-group-item">
+                    	Step4 : Generate a chain and compares at each iteration the hash with the target hash. You have got the password that produced the whole chain and the attack is successful.
+                    </li>
+                    <li class="list-group-item">
+                    <code> Such that : 900617->990000->930009->990333->930309->990333->930363</code>    
+                    </li>         
                 </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="rainbowtable">
@@ -87,6 +100,7 @@
                         class="btn btn-default">Compute</button> 
                         <input id="redfunc3_result" type="text" ><br>
                     </li>
+                    <li class="list-group-item"> eg. 123456 -H-> 113222 -R1-> 143221 -H-> 113444 -R2-> 146421 -H-> 116444 -R3-> 146424 </li>
                 </ul>
             </div>
         </div>

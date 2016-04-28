@@ -30,14 +30,8 @@
                         name="pw"
                         class="form-control"
                         id="pw"
-                        placeholder="Password"
+                        placeholder="Password - Ranged from 100000 to 999999 and integer only"
                         required>
-                    <input
-                        type="hidden"
-                        name="ans"
-                        id="ans"
-                        value="helloworld"
-                        class="form-control">
                 </div>
             </div>
             <div class="form-group">

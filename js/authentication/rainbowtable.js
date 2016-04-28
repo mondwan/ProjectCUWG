@@ -54,7 +54,7 @@ $(document).ready(function () {
     		alert("invalid hash");
     	} else{
     		//Simple hash function
-    		$('#redfunc1_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1)).toString());
+    		$('#redfunc1_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(0)).toString());
     	}
     		});
     
@@ -64,7 +64,7 @@ $(document).ready(function () {
     		alert("invalid hash");
     	} else{
     		//Simple hash function
-    		$('#redfunc2_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1)).toString());
+    		$('#redfunc2_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2)*2%7)+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(3))+(hashfunc.value.charAt(0)).toString());
     	}
     		}); 
     
@@ -74,7 +74,7 @@ $(document).ready(function () {
     		alert("invalid hash");
     	} else{
     		//Simple hash function
-    		$('#redfunc3_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1)).toString());
+    		$('#redfunc3_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1)*5%9)+(hashfunc.value.charAt(1)).toString());
     	}
     		});   
     
