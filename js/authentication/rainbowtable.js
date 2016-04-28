@@ -26,17 +26,17 @@ $(document).ready(function () {
     		alert('For simplicity, the password will only be at the range 100000 to 999999 and integer only');
     	} else{
     		//Simple hash function
-    		$('#Hash_result').val((hashfunc.value.charAt(0))+(hashfunc.value.charAt(0))+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1)));
+    		$('#Hash_result').val(((hashfunc.value.charAt(0))+(hashfunc.value.charAt(1))).toString()+(hashfunc.value%9).toString()+(hashfunc.value%8).toString());
     	}
     		});
     
     // RainbowTable Reduction function #1 handling    
     $redfuncbtn1.click(function(){
-    	if (redfunc1.value > 999999 || redfunc1.value< 100000){
+    	if (redfunc1.value > 9999 || redfunc1.value< 1000){
     		alert("invalid hash");
     	} else{
     		//Simple hash function
-    		$('#redfunc1_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(0)).toString());
+    		$('#redfunc1_result').val((redfunc1.value.charAt(0)+13)%9+((redfunc1.value.charAt(0)+12)%9).toString()+(redfunc1.value.charAt(3)).toString()+(redfunc1.value.charAt(1)).toString()+(redfunc1.value.charAt(2)).toString());
     	}
     		});
     
