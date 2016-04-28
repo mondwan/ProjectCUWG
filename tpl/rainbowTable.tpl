@@ -23,7 +23,7 @@
         {% include 'commonJSLib.tpl' %}
         <script
           type="text/javascript"
-          src="/js/authentication/rainbow_table.js">
+          src="/js/authentication/rainbowtable.js">
         </script>
     </body>
 </html>

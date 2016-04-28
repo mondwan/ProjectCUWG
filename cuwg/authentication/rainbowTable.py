@@ -44,7 +44,7 @@ class PasswordLogin(webapp2.RequestHandler):
                         'href': '/authentication',
                         'active': False,
                     }, {
-                        'name': 'RainbowTable',
+                        'name': 'Rainbow Table',
                         'href': '/authentication/rainbowTable',
                         'active': True,
                     }],
@@ -71,7 +71,7 @@ class RainbowTableHandler(webapp2.RequestHandler):
                 'href': '/authentication',
                 'active': False,
             }, {
-                'name': 'Hidden Password',
+                'name': 'RainbowTable',
                 'href': '/authentication/rainbowTable',
                 'active': True,
             }],
@@ -91,7 +91,7 @@ class RainbowTableHandler(webapp2.RequestHandler):
         name = self.request.get('name')
         pw = self.request.get('pw')
 
-        if name == 'mary' and pw == 'helloworld':
+        if name == 'mary' and pw == '900617':
             isSucceeded = True
         else:
             isSucceeded = False

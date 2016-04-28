@@ -3,7 +3,7 @@
         <h3>Login</h3>
         <form
             id="loginF"
-            action="/authentication/hiddenPassword"
+            action="/authentication/rainbowTable"
             method="POST"
             class="form-horizontal">
             <div class="form-group">
