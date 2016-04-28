@@ -56,7 +56,6 @@
             <div role="tabpanel" class="tab-pane" id="rainbowtable">
                 <ul class="list-group">
                     <li class="list-group-item">
-<<<<<<< HEAD
                         Hash function ( H ) : <input type="number" id="hashfunc" min="0" max="100">
                         <button
                         type="submit"
@@ -87,7 +86,7 @@
                         id="redfuncbtn3"
                         class="btn btn-default">Compute</button> 
                         <input id="redfunc3_result" type="text" ><br>
-                    </li>                                                           
+                    </li>
                 </ul>
             </div>
         </div>
