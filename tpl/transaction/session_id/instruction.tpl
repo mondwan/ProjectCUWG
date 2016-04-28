@@ -3,7 +3,7 @@
         <h1>Challenge: Cookies - Insecure Session Id</h1>
 
         <h3>Goal</h3>
-        <p>Try to imitate other user by guessing their session ID </p>
+        <p>Try to imitate other user by guessing other user's session ID </p>
 
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
@@ -18,7 +18,7 @@
             <div role="tabpanel" class="tab-pane active" id="guideline">
                 <ul class="list-group">
                     <li class="list-group-item">Login with your account ( mary:password7 ) and find out your session id from somewhere </li>
-                    <li class="list-group-item">Try to imitate other user by modifying the session id</li>
+                    <li class="list-group-item">Try to imitate other user by modifying the session id and access their confidential information</li>
                 </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="solution">
@@ -28,9 +28,6 @@
                     </li>
                     <li class="list-group-item">
                         Try to guess other's session id by accessing the modified url and view other's information by imitating Peter ( sid=2019900617 in this task )
-                    </li>
-                    <li class="list-group-item">
-                        When designing web application, it is important to make sure the session id is securely encypted 
                     </li>
                 </ul>
             </div>

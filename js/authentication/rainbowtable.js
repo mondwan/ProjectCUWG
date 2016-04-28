@@ -4,7 +4,7 @@ $(document).ready(function () {
     var $form = $('#loginF');
     var $name = $('#name');
     var $pw = $('#pw');
-    var $alert = $('#alert');
+                  
     var $hashfuncbtn = $('#hashfuncbtn');
     var hashfunc = document.getElementById("hashfunc");
     var $Hash_result = $('#Hash_result');
@@ -17,8 +17,6 @@ $(document).ready(function () {
     var $redfuncbtn3 = $('#redfuncbtn3');
     var redfunc3 = document.getElementById("redfunc3");
     var $redfunc3_result = $('#redfunc3_result');    
-
-
 
 // RainbowTable hash function handling    
     $hashfuncbtn.click(function(){
@@ -36,27 +34,28 @@ $(document).ready(function () {
     		alert("invalid hash");
     	} else{
     		//Simple hash function
-    		$('#redfunc1_result').val((redfunc1.value.charAt(0)+13)%9+((redfunc1.value.charAt(0)+12)%9).toString()+(redfunc1.value.charAt(3)).toString()+(redfunc1.value.charAt(1)).toString()+(redfunc1.value.charAt(2)).toString());
+    		$('#redfunc1_result').val((redfunc1.value.charAt(0)+13)%9+((redfunc1.value.charAt(0)+12)%9).toString()+(redfunc1.value.charAt(3)).toString()+(redfunc1.value.charAt(1)).toString()+(redfunc1.value.charAt(2)).toString()+(redfunc1.value.charAt(3)).toString());
+
     	}
     		});
     
     // RainbowTable Reduction function #2 handling    
     $redfuncbtn2.click(function(){
-    	if (redfunc2.value > 999999 || redfunc2.value< 100000){
+    	if (redfunc2.value > 9999 || redfunc2.value< 1000){
     		alert("invalid hash");
     	} else{
     		//Simple hash function
-    		$('#redfunc2_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2)*2%7)+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(3))+(hashfunc.value.charAt(0)).toString());
+    		$('#redfunc2_result').val((redfunc2.value.charAt(0))+((redfunc2.value.charAt(0)+12)%7).toString()+(redfunc2.value.charAt(3)).toString()+(redfunc2.value.charAt(2)).toString()+(redfunc2.value.charAt(1)).toString()+(redfunc2.value.charAt(1)).toString());
     	}
     		}); 
     
     // RainbowTable Reduction function #3 handling    
     $redfuncbtn3.click(function(){
-    	if (redfunc3.value > 999999 || redfunc3.value< 100000){
+    	if (redfunc3.value > 9999 || redfunc3.value< 1000){
     		alert("invalid hash");
     	} else{
     		//Simple hash function
-    		$('#redfunc3_result').val((hashfunc.value.charAt(0))+((hashfunc.value.charAt(0)+12)%9)+(hashfunc.value.charAt(2))+(hashfunc.value.charAt(1))+(hashfunc.value.charAt(1)*5%9)+(hashfunc.value.charAt(1)).toString());
+    		$('#redfunc3_result').val((redfunc3.value.charAt(0))+((redfunc3.value.charAt(0)+13)%7).toString()+(redfunc3.value.charAt(3)).toString()+(redfunc3.value.charAt(2)).toString()+(redfunc3.value.charAt(1)).toString()+(redfunc3.value.charAt(1)).toString());
     	}
     		});   
     

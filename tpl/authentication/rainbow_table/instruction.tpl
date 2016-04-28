@@ -14,7 +14,7 @@
                 <a href="#solution" aria-controls="solution" role="tab" data-toggle="tab">Solution</a>
             </li>
             <li role="presentation">
-                <a href="#rainbowtable" aria-controls="rainbowtable" role="tab" data-toggle="tab">Rainbow Table</a>
+                <a href="#rainbowtable" aria-controls="rainbowtable" role="tab" data-toggle="tab">Rainbow Table Tools</a>
             </li>
         </ul>
 
@@ -25,7 +25,7 @@
                         Try to pre-compute the rainbow table using the Simplified Hash function and Reduction functions provided and store only the 1st and last columns.
                     </li>
                     <li class="list-group-item">
-                        <code> False alarm ( collision with ordinary hash chain )is avoided by replacing the single reduction function with sequence of related reduction functions R(k).</code>
+                        R(n) are the simplifed reduction functions that consistently maps a hashed value into a valid plaintext value.
                     </li>                    
                     <li class="list-group-item">
                         Find the hidden field and Try to access the unencrypted Security Account Manager (SAM) file which contain user name and password hashes.
@@ -36,33 +36,32 @@
                     <li class="list-group-item">
                         Try to log-in with your cracked plain text password.
                     </li>
-                    <li> <img src='./authentication/rainbow_table/test_rainbow.png'> </li>
-                    <h5>Reference : https://en.wikipedia.org/wiki/Rainbow_table</h5>
                     <p hidden> For admin use: unencrypted text file is stored under /authentication/rainbowTable/passwordFile </p>
                 </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="solution">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        As we know that the plaint text password is ranged from 100000 to 999999, we can pre-compute the hashes chains with the known Hash and reduction functions.
+                        As we know that the plaint text password is ranged from 100000 to 999999, we can pre-compute the hashes chains with the known Hash and reduction functions.<br>
+                        False alarm ( collision with ordinary hash chain )is avoided by replacing the single reduction function with sequence of related reduction functions R(k).
                     </li>
                     <li class="list-group-item">
                         Find out the hidden filed on HTML code and access the SAM file at /authentication/rainbowTable/passwordFile.
                     </li>
                     <li class="list-group-item">
-                        To crake the password with rainbow table , step 1 : Starting from the hash ("282882") obtained from SAM file, one computes the last reduction used in the table and checks whether the password exits in the last column on your table.
+                        To crake the password with rainbow table , Step 1 : Starting from the hash ("4353") obtained from SAM file, one computes the last reduction (R3)used in the table and checks whether the password exits in the last column on your table.
                     </li>
                     <li class="list-group-item">
-                        Step2 : If the test fail which means you cannot find a result from step 1 , try to compute a chain with the 2nd last reduction ( R2 ).
+                        Step2 : If the test fail ( 4353 -R3 -> 403533 ) which means you cannot find a result matched the last column from step 1 , try to compute a chain with the 2nd last reduction ( R2 ).
                     </li>
                     <li class="list-group-item">
-                    	Step3 : If the test is positive which means that you can find the corresponding reduced hashes at the end of the chain and in the table, the password is retrieved at the beginning of the chain that produces the last results.
+                    	Step3 : If the test is positive ( 4353->463533->4665->405666 ) which means that you can find the corresponding reduced hashes at the end of the chain and in the table, the password is retrieved at the beginning of the chain that produces the last results.
                     </li>
                     <li class="list-group-item">
-                    	Step4 : Generate a chain and compares at each iteration the hash with the target hash. You have got the password that produced the whole chain and the attack is successful.
+Step4 : Generate a chain and compares at each iteration the hash with the target hash. You have got the password ( 1st column : 900617 ) that produced the whole chain and the attack is successful.
                     </li>
                     <li class="list-group-item">
-                    <code> Such that : 900617->990000->930009->990333->930309->990333->930363</code>    
+                    <code> Such that : 900617->9051->431051->4353->463533->4665->405666</code>
                     </li>         
                 </ul>
             </div>
@@ -100,7 +99,7 @@
                         class="btn btn-default">Compute</button> 
                         <input id="redfunc3_result" type="text" ><br>
                     </li>
-                    <li class="list-group-item"> eg. 123456 -H-> 113222 -R1-> 143221 -H-> 113444 -R2-> 146421 -H-> 116444 -R3-> 146424 </li>
+                    <li class="list-group-item"> For example : 123456 -H-> 1230 -R1-> 540230 -H-> 5456 -R2-> 516544 -H-> 5170 -R3-> 520711 </li>
                 </ul>
             </div>
         </div>
