@@ -4,16 +4,16 @@
         <p>Common practice</p>
         <ul class="list-group">
             <li class="list-group-item">
-                Do not place any credentials in the front end since they can
-                be viewed by anyone.
+               To defense against Rainbow Table
             </li>
             <li class="list-group-item">
-                Password validation MUST always be placed on server side.
-                Either by sending a post request through AJAX or form submit
-                in POST is good enough.
+                Rainbow table is ineffective against onepway hashes with large salts.
+                <code>saltedhash(password) = hash(hash(password) + salt)</code>
+                https://en.wikipedia.org/wiki/Salt_(cryptography)
             </li>
             <li class="code-item">
-            <code>saltedhash(password) = hash(hash(password) + salt)</code>
+                Alternative approach - Key Strengthening by extending the key with a random salt.
+
             </li>
         </ul>
         <a href="/" class="btn btn-success">Back to home</a>
