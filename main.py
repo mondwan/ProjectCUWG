@@ -37,6 +37,9 @@ from cuwg.xss.javascript import JavascriptHandler
 from cuwg.xss.javascript import ProductHandler
 from cuwg.xss.javascript import PreorderHandler
 from cuwg.xss.javascript import UpdateStateHandler
+from cuwg.xss.preventRequestForgery import PreventRequestForgery
+from cuwg.xss.preventRequestForgery import TransferHandler
+from cuwg.xss.preventRequestForgery import CommonPractise
 # from cuwg.transaction import TransactionHandler
 # from cuwg.xss import XSSHandler
 
@@ -143,6 +146,21 @@ app = webapp2.WSGIApplication([
         '/xss/javascript/updateState',
         UpdateStateHandler,
         'updateState'
+    ),
+    webapp2.Route(
+        '/xss/preventRequestForgery',
+        PreventRequestForgery,
+        'preventRequestForgery'
+    ),
+    webapp2.Route(
+        '/xss/preventRequestForgery/transfer',
+        TransferHandler,
+        'TransferHandler'
+    ),
+    webapp2.Route(
+        '/xss/preventRequestForgery/commonPractise',
+        CommonPractise,
+        'CommonPractise'
     ),
     # webapp2.Route('/xss', XSSHandler, 'xss'),
 ], debug=True)

@@ -46,7 +46,7 @@
                 <div class="list-group">
                     <a href="/xss/sanitization" class="list-group-item">XSS - Sanitizing Input</a>
                     <a href="/xss/javascript" class="list-group-item">XSS - Client Side XSS</a>
-                    <a href="#" class="list-group-item">Topic 3</a>
+                    <a href="/xss/preventRequestForgery" class="list-group-item">CSRF - Prevent Request Forgery</a>
                 </div>
             </div>
         </div>
