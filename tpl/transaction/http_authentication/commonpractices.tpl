@@ -31,6 +31,8 @@
                     $.ajax({
                         url: '/transaction/httpAuthentication',
                         method: 'POST',
+                        username: 'logout',
+                        password: 'logout',
                         headers: {
                             Authorization: 'Basic logout',
                         },

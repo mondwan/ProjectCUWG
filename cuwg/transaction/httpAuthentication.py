@@ -43,17 +43,11 @@ class HttpAuthenticationHandler(webapp2.RequestHandler):
     def post(self):
         ctx = HttpAuthenticationHandler.getBreadcrumbContext()
         expectToken = 'Basic aGFoYToxMjM0'
-        logoutToken = 'Basic logout'
         if (
             'Authorization' in self.request.headers and
             self.request.headers['Authorization'] == expectToken
         ):
             ctx['isSucceeded'] = True
-        elif (
-            'Authorization' in self.request.headers and
-            self.request.headers['Authorization'] == logoutToken
-        ):
-            ctx['isSucceeded'] = False
         else:
             ctx['isSucceeded'] = False
             self.response.status = '401 Unauthorized'
