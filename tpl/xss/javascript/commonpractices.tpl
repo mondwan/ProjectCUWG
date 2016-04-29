@@ -7,7 +7,7 @@
                 Use javascript obfuscator to obfuscating javascript code.  So that people cannot understand it directly. 
             </li>
             <li class="list-group-item">
-                Also, for prmission checking should always do in server side instead of client side (i.e. using javascript and cookies)
+                Do permission checking on server side instead of client side (IE javascript and cookies)
             </li>
         </ul>
         <a href="/" class="btn btn-success">Back to home</a>

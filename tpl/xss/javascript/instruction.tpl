@@ -21,7 +21,7 @@
                         We have a dummy account where name and password are both "john".
                     </li>
                     <li class="list-group-item">
-                        Let to look at javascript code, and find out some hints
+                        Let's look at javascript code, and find out some hints
                     </li>
                 </ul>
             </div>
