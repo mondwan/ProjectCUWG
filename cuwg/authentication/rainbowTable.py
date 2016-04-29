@@ -93,11 +93,14 @@ class RainbowTableHandler(webapp2.RequestHandler):
 
         if name == 'mary' and pw == '900617':
             isSucceeded = True
+            userError = False
         else:
             isSucceeded = False
+            userError = True
 
         ctx = self.getBreadcrumbContext()
         ctx['isSucceeded'] = isSucceeded
+        ctx['userError'] = userError
 
         self.response.write(
             template.render(
