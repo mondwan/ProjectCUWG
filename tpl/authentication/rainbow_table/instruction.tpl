@@ -76,7 +76,7 @@ Step4 : Generate a chain and compares at each iteration the hash with the target
                         <input id="Hash_result" type="text" ><br>
                     </li>
                     <li class="list-group-item">
-                        Reduction function (R1) : <input type="text" id="redfunc1">
+                        Reduction function (R1) : <input type="number" id="redfunc1">
                         <button
                         type="submit"
                         id="redfuncbtn1"
@@ -84,7 +84,7 @@ Step4 : Generate a chain and compares at each iteration the hash with the target
                         <input id="redfunc1_result" type="text" ><br>
                     </li>
                     <li class="list-group-item">
-                        Reduction function (R2) : <input type="text" id="redfunc2">
+                        Reduction function (R2) : <input type="number" id="redfunc2">
                         <button
                         type="submit"
                         id="redfuncbtn2"
@@ -92,7 +92,7 @@ Step4 : Generate a chain and compares at each iteration the hash with the target
                         <input id="redfunc2_result" type="text" ><br>
                     </li>
                     <li class="list-group-item">
-                        Reduction function (R3) : <input type="text" id="redfunc3">
+                        Reduction function (R3) : <input type="number" id="redfunc3">
                         <button
                         type="submit"
                         id="redfuncbtn3"
