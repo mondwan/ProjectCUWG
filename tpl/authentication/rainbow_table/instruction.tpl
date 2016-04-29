@@ -4,7 +4,7 @@
 
         <h3>Goal</h3>
        			<p>This site stores user name and hashes of user password in unencrypted text file. Try to recover the plaintext password more efficently by using Rainbow table</p>
-                <p>Understand the basic concpet of pre-computed rainbow table and how to defense this attack.</p>
+                <p>Understand the basic concpet of pre-computed rainbow table and how to defend this attack.</p>
 
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active">
@@ -68,7 +68,7 @@ Step4 : Generate a chain and compares at each iteration the hash with the target
             <div role="tabpanel" class="tab-pane" id="rainbowtable">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        Hash function ( H ) : <input type="number" id="hashfunc" min="0" max="100">
+                        Hash function ( H ) : <input type="number" id="hashfunc" min="100000" max="999999">
                         <button
                         type="submit"
                         id="hashfuncbtn"
