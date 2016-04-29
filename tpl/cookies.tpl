@@ -21,10 +21,7 @@
         </div>
 
         {% include 'commonJSLib.tpl' %}
-        <script
-          type="text/javascript"
-          src="/js/authentication/password2.js">
-        </script>
+
     </body>
 </html>
 {% endautoescape %}
