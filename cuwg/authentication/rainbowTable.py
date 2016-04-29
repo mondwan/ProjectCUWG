@@ -14,7 +14,7 @@ import constants
 class PasswordFileHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write(
-            '{user:mary, pw_hash:"990333"}'
+            '{user:mary, pw_hash:"4353"}'
         )
 
 class PasswordLogin(webapp2.RequestHandler):

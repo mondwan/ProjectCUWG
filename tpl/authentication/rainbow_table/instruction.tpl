@@ -43,25 +43,26 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         As we know that the plaint text password is ranged from 100000 to 999999, we can pre-compute the hashes chains with the known Hash and reduction functions.<br>
-                        False alarm ( collision with ordinary hash chain )is avoided by replacing the single reduction function with sequence of related reduction functions R(k).
+                        ** Collision with ordinary hash chain ( False Alarm ) is avoided by using sequence of related reduction functions R(k)instead of same ordinary reduction function.
                     </li>
                     <li class="list-group-item">
-                        Find out the hidden filed on HTML code and access the SAM file at /authentication/rainbowTable/passwordFile.
+                        You can find out the hidden filed on HTML code and access the SAM file at /authentication/rainbowTable/passwordFile.
                     </li>
                     <li class="list-group-item">
-                        To crake the password with rainbow table , Step 1 : Starting from the hash ("4353") obtained from SAM file, one computes the last reduction (R3)used in the table and checks whether the password exits in the last column on your table.
+                        To crake the password with rainbow table , <br>
+                        Step 1 : Starting from the hash ("4353") obtained from SAM file, try to computes the last reduction (R3) used in the table and checks whether the password exits in the last column on your table.
                     </li>
                     <li class="list-group-item">
-                        Step2 : If the test fail ( 4353 -R3 -> 403533 ) which means you cannot find a result matched the last column from step 1 , try to compute a chain with the 2nd last reduction ( R2 ).
+                        Step2 : If the test fail ( 4353 -R3 -> 403533 where cannot find any matches from last column ) , try to compute a chain with the 2nd last reduction ( R2 ).
                     </li>
                     <li class="list-group-item">
-                    	Step3 : If the test is positive ( 4353->463533->4665->405666 ) which means that you can find the corresponding reduced hashes at the end of the chain and in the table, the password is retrieved at the beginning of the chain that produces the last results.
+                    	Step3 : If the test is positive ( 4353->463533->4665->405666 where you can find the corresponding reduced hashes at the end of the chain ), the password is retrieved at the beginning of the chain that produces the matched results in last column.
                     </li>
                     <li class="list-group-item">
-Step4 : Generate a chain and compares at each iteration the hash with the target hash. You have got the password ( 1st column : 900617 ) that produced the whole chain and the attack is successful.
+                        Step4 : Generate a chain and compares at each iteration the hash with the target hash. Then, you have got the password ( 1st column : 900617 ) that produced the whole chain and the attack is successful.
                     </li>
                     <li class="list-group-item">
-                    <code> Such that : 900617->9051->431051->4353->463533->4665->405666</code>
+                        <code> The chain that should be obtained by you:  900617->9051->431051->4353->463533->4665->405666</code>
                     </li>         
                 </ul>
             </div>
@@ -76,7 +77,7 @@ Step4 : Generate a chain and compares at each iteration the hash with the target
                         <input id="Hash_result" type="text" ><br>
                     </li>
                     <li class="list-group-item">
-                        Reduction function (R1) : <input type="number" id="redfunc1">
+                        Reduction function (R1) : <input type="number" id="redfunc1" min="1000" max="9999">
                         <button
                         type="submit"
                         id="redfuncbtn1"
@@ -84,7 +85,7 @@ Step4 : Generate a chain and compares at each iteration the hash with the target
                         <input id="redfunc1_result" type="text" ><br>
                     </li>
                     <li class="list-group-item">
-                        Reduction function (R2) : <input type="number" id="redfunc2">
+                        Reduction function (R2) : <input type="number" id="redfunc2" min="1000" max="9999">
                         <button
                         type="submit"
                         id="redfuncbtn2"
@@ -92,7 +93,7 @@ Step4 : Generate a chain and compares at each iteration the hash with the target
                         <input id="redfunc2_result" type="text" ><br>
                     </li>
                     <li class="list-group-item">
-                        Reduction function (R3) : <input type="number" id="redfunc3">
+                        Reduction function (R3) : <input type="number" id="redfunc3" min="1000" max="9999">
                         <button
                         type="submit"
                         id="redfuncbtn3"
