@@ -18,18 +18,21 @@
 
 import webapp2
 from cuwg.root import RootHandler
+from cuwg.authentication.root import AuthenticationRootHandler
 from cuwg.authentication.password import PasswordHandler
 from cuwg.authentication.password import SignUp
 from cuwg.authentication.hiddenPassword import HiddenPasswordHandler
 from cuwg.authentication.rainbowTable import RainbowTableHandler
 from cuwg.authentication.rainbowTable import PasswordFileHandler
 from cuwg.authentication.rainbowTable import PasswordLogin
+from cuwg.transaction.root import TransactionRootHandler
 from cuwg.transaction.cookies import TransactionHandler
 from cuwg.transaction.cookies import CookiesSignin
 from cuwg.transaction.cookies import CookiesCrack
 from cuwg.transaction.httpAuthentication import HttpAuthenticationHandler
 from cuwg.transaction.sessionHijack import SessionHijackHandler
 from cuwg.transaction.sessionHijack import TransferFormHandler
+from cuwg.xss.root import XSSRootHandler
 from cuwg.xss.sanitization import SanitizationHandler
 from cuwg.xss.sanitization import ReviewFormHandler
 from cuwg.xss.sanitization import ResultVerifyHandler
@@ -47,6 +50,11 @@ from cuwg.xss.preventRequestForgery import CommonPractise
 # Setup the WSGI server
 app = webapp2.WSGIApplication([
     webapp2.Route('/', RootHandler, 'index'),
+    webapp2.Route(
+        '/authentication',
+        AuthenticationRootHandler,
+        'authenticationIndex'
+    ),
     webapp2.Route(
         '/authentication/password',
         PasswordHandler,
@@ -82,6 +90,7 @@ app = webapp2.WSGIApplication([
         PasswordLogin,
         'passwordLogin'
     ),
+    webapp2.Route('/transaction', TransactionRootHandler, 'transactionIndex'),
     webapp2.Route(
         '/transaction/cookies',
         TransactionHandler,
@@ -112,6 +121,7 @@ app = webapp2.WSGIApplication([
         HttpAuthenticationHandler,
         'httpAuthentication'
     ),
+    webapp2.Route('/xss', XSSRootHandler, 'xssIndex'),
     webapp2.Route(
         '/xss/sanitization',
         SanitizationHandler,
