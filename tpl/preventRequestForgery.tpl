@@ -14,7 +14,7 @@
                         {% include './xss/prevent_request_forgery/instruction.tpl' %}
 
                         {% if currentBalance <= 0 %}
-                            <h3>Congraulation!</h3>
+                            <h1 class="text-success">Congraulation!</h1>
                             <p> You have transfer all the victim's money</p>
                             <p>
                                 You have passed this mission

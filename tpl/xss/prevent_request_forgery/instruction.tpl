@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <h1>Challenge: XSS - Prevent Request Forgery</h1>
+        <h1>Challenge: CSRF - Prevent Request Forgery</h1>
 
         <h3>Goal</h3>
         <p>
