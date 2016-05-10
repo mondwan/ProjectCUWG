@@ -49,6 +49,9 @@
                         money, can you create a comment such that it can
                         transfer all the money on refresh?
                     </li>
+                    <li class="list-group-item">
+                        Account's balance need to a refresh to update.
+                    </li>
                 </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="solution">

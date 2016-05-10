@@ -13,6 +13,7 @@ import os
 import logging
 import datetime
 import json
+import time
 
 
 # use the sid as the key name
@@ -49,10 +50,20 @@ class CommonPractise(webapp2.RequestHandler):
             if account.money > 0:
                 raise Exception('Do not cheat :[')
 
-            # Delete all database record
+            # Delete all database record with diff timestamp > 3600
+            now = time.mktime(datetime.datetime.now().timetuple())
             ndb.delete_multi(
-                Account.query().fetch(keys_only=True)
+                map(
+                    lambda x: x.key,
+                    filter(
+                        lambda x: now - time.mktime(x.date.timetuple()) > 3600,
+                        Account.query().fetch()
+                    )
+                )
             )
+
+            # Delete myself
+            ndb.delete_multi([account.key])
 
             # Delete SID
             self.deleteSID()
